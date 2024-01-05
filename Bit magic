@@ -1,1 +1,14 @@
-Bit magic programs
+Program : Power set
+Code:
+class Solution:
+	def AllPossibleStrings(self, s):
+		# Code here
+		ss = []
+		for i in range((2**len(s))-1,0,-1):
+		    d=""
+		    for j in range(len(s)):
+		        if i & (1 << j) and j<len(s):
+		            d += s[j]
+		  #  ss //+= ss
+		    ss.append(d)
+		return sorted(ss)
